@@ -1,4 +1,4 @@
-# Basic vonBertalanffy growth curve optimized via TMB
+# Basic von Bertalanffy growth curve optimized via TMB
 # ben.williams@alaska.gov
 # 2019-10
 

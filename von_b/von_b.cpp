@@ -14,7 +14,7 @@ Type objective_function<Type>::operator() ()
   PARAMETER(Linf);
   PARAMETER(kappa);
   PARAMETER(t0)
-    PARAMETER(log_sigma);
+  PARAMETER(log_sigma);
   
   // procedures (transformed parameters)
   Type sigma = exp(log_sigma);
@@ -22,9 +22,8 @@ Type objective_function<Type>::operator() ()
   // create a vector for predictions
   vector<Type> yfit(n); 
   
-  // negative log likelihood 
-  
-  Type nll = 0.0; // set nll to 0
+  // negative log likelihood  set nll to 0
+    Type nll = 0.0; 
   
   for(int i=0; i<n; i++){
     yfit(i) = Linf * (1.0 - exp(-kappa * (age(i) - t0)));
@@ -32,7 +31,6 @@ Type objective_function<Type>::operator() ()
   
   nll = -sum(dnorm(length, yfit, sigma, true));
   
-
   REPORT(Linf);
   REPORT(kappa);
   REPORT(t0);
