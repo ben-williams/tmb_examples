@@ -9,7 +9,7 @@ library(ggplot2)
 library(FNGr)
 theme_set(theme_sleek())
 
-setwd("von_b")
+setwd(here::here("von_b"))
 
 # data ----
 
